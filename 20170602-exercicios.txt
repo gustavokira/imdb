@@ -1,0 +1,12 @@
+1) Procure 3 filme que não exista ainda na base de dados.
+
+para cada filme, faça:
+	2) Vá até o site IMDB e ache a página deste filme. 
+	3) Identifique na página todos os atributos (colunas) necessários para cadastrar o filme na base.
+	4) Vá até a página com todo o cast do filme e identifique quais dos 10 primeiros atores ou atrizes estão cadastrados na base e quais não.
+	5) Identifique se o diretor ou diretora já esta na base de dados.
+	6) Caso o diretor ou diretora não exista, vá até a pagina dele e identifique todos os atributos (colunas) necessários para cadastrá-lo(a) na base.
+	7) Cadastre o diretor ou diretora na base se ela não existir.
+	8) Cadastre o filme.
+	9) Cadastre todos os atores ou atrizes identificados no item 4.
+	

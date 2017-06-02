@@ -133,6 +133,7 @@ for line in sys.stdin:
     movie = parseMovie(movieHtml)
 
     fromDbDiretor = dao.getDiretorById(movie["director_id"])
+
     if fromDbDiretor is None:
         print "diretor "+c["director_id"]+" nao encontrado"
         print "fazendo o download e inserindo no banco..."
