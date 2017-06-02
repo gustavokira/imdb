@@ -9,4 +9,5 @@ para cada filme, faça:
 	7) Cadastre o diretor ou diretora na base se ela não existir.
 	8) Cadastre o filme.
 	9) Cadastre todos os atores ou atrizes identificados no item 4.
-	
+	10) Associe os atores e atrizes ao filme.
+	11) Crie selects (quantos achar necessário) que provem que o filme foi cadastrado com todas as informações necessárias.
