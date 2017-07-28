@@ -25,8 +25,8 @@ DROP TABLE IF EXISTS `atores`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `atores` (
-  `id` int(11) NOT NULL,
-  `nome` varchar(50) DEFAULT NULL,
+  `id` varchar(20) NOT NULL,
+  `nome` varchar(100) DEFAULT NULL,
   `nascimento` year(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -38,6 +38,7 @@ CREATE TABLE `atores` (
 
 LOCK TABLES `atores` WRITE;
 /*!40000 ALTER TABLE `atores` DISABLE KEYS */;
+INSERT INTO `atores` VALUES ('',NULL,NULL);
 /*!40000 ALTER TABLE `atores` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -49,8 +50,8 @@ DROP TABLE IF EXISTS `diretores`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `diretores` (
-  `id` int(11) NOT NULL,
-  `nome` varchar(45) DEFAULT NULL,
+  `id` varchar(20) NOT NULL,
+  `nome` varchar(100) DEFAULT NULL,
   `nascimento` year(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -73,18 +74,18 @@ DROP TABLE IF EXISTS `episodios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `episodios` (
-  `id` int(11) NOT NULL,
-  `titulo` varchar(45) DEFAULT NULL,
+  `id` varchar(20) NOT NULL,
+  `titulo` varchar(500) DEFAULT NULL,
   `estreia` date DEFAULT NULL,
-  `seriados_id` int(11) NOT NULL,
-  `diretores_id` int(11) NOT NULL,
   `temporada` int(11) DEFAULT NULL,
   `ano` year(4) DEFAULT NULL,
+  `seriados_id` varchar(20) NOT NULL,
+  `diretores_id` varchar(20) NOT NULL,
   PRIMARY KEY (`id`,`seriados_id`,`diretores_id`),
-  KEY `fk_episodios_seriados_idx` (`seriados_id`),
+  KEY `fk_episodios_seriados1_idx` (`seriados_id`),
   KEY `fk_episodios_diretores1_idx` (`diretores_id`),
   CONSTRAINT `fk_episodios_diretores1` FOREIGN KEY (`diretores_id`) REFERENCES `diretores` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_episodios_seriados` FOREIGN KEY (`seriados_id`) REFERENCES `seriados` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_episodios_seriados1` FOREIGN KEY (`seriados_id`) REFERENCES `seriados` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -105,8 +106,8 @@ DROP TABLE IF EXISTS `episodios_tem_personagens`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `episodios_tem_personagens` (
-  `episodios_id` int(11) NOT NULL,
-  `personagens_id` int(11) NOT NULL,
+  `episodios_id` varchar(20) NOT NULL,
+  `personagens_id` varchar(20) NOT NULL,
   PRIMARY KEY (`episodios_id`,`personagens_id`),
   KEY `fk_episodios_has_personagens_personagens1_idx` (`personagens_id`),
   KEY `fk_episodios_has_personagens_episodios1_idx` (`episodios_id`),
@@ -132,9 +133,9 @@ DROP TABLE IF EXISTS `personagens`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `personagens` (
-  `id` int(11) NOT NULL,
-  `nome` varchar(45) DEFAULT NULL,
-  `atores_id` int(11) NOT NULL,
+  `id` varchar(20) NOT NULL,
+  `nome` varchar(100) DEFAULT NULL,
+  `atores_id` varchar(20) NOT NULL,
   PRIMARY KEY (`id`,`atores_id`),
   KEY `fk_personagens_atores1_idx` (`atores_id`),
   CONSTRAINT `fk_personagens_atores1` FOREIGN KEY (`atores_id`) REFERENCES `atores` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -158,8 +159,8 @@ DROP TABLE IF EXISTS `seriados`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `seriados` (
-  `id` int(11) NOT NULL,
-  `titulo` varchar(45) DEFAULT NULL,
+  `id` varchar(20) NOT NULL,
+  `titulo` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -182,4 +183,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-07-28  0:40:12
+-- Dump completed on 2017-07-28  7:07:08
