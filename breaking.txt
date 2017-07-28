@@ -1,0 +1,25 @@
+insert into seriados (id, titulo) values
+("tt0903747","Breaking Bad");
+
+insert into atores (id, nome, nascimento) values
+("nm0186505","Bryan Cranston",1956),
+("nm0348152","Anna Gunn",1968),
+("nm0666739","Aaron Paul",1979),
+("nm0606487","Dean Norris",1963),
+("nm1336827","Betsy Brandt",1973),
+("nm1336827","RJ Mitte",1992);
+
+insert into personagens (id, nome, atores_id) values
+("ch0074133","Walter White","nm0186505"),
+("ch0096616","Skyler White","nm0348152"),
+("ch0096617","Jesse Pinkman","nm0666739"),
+("ch0119943","Hank Schrader","nm0606487"),
+("ch0129937","Marie Schrader","nm1336827"),
+("ch0074134","Walter White, Jr.","nm1336827");
+
+insert into diretores (id, nome) values("nm0319213","Vince Gilligan");
+
+INSERT INTO episodios
+(id,titulo,estreia,temporada,ano,seriados_id,diretores_id)
+VALUES
+("tt0959621","Pilot",2008-01-30,1,2008,"tt0903747","nm0319213");
