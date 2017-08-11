@@ -1,0 +1,20 @@
+Escreva consultas para os seguintes problemas:
+Lembre-se que as infos do banco podem mudar!
+
+1) Quantos seriados?
+2) Quantos atores ou atrizes?
+3) Quantos diretores ou diretoras?
+4) Quantos episódios?
+5) Quantos episódios tem cada seriado?
+6) Qual o seriado com mais episódios?
+7) Qual o seriado com mais temporadas?
+8) Quem é o diretor ou diretora que mais dirigiu episódios?
+9) Quem é o ator ou atriz que mais participou de episódios diferentes?
+10) Crie uma view para facilitar a consulta dos atores ou atrizes que fizeram um seriado.
+11) Crie uma view para facilitar a consulta dos diretores ou diretoras que fizeram um seriado.
+12) Crie uma view com:
+	- nome da personagem
+	- nome do ator ou atriz
+	- nome do seriado do qual o personagem faz parte
+
+13) Existe algum ator ou atriz que participou de mais de um seriado?
